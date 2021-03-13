@@ -54,7 +54,7 @@ class Gambling
             new ScratchCards(),
             new MysteryBox(),
             new VideoPoker(),
-
+            new Craps(),
         };
         IGambleGame selectedGame = null;
 
