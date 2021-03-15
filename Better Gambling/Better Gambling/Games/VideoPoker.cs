@@ -36,6 +36,8 @@ class VideoPoker : IGambleGame
         nextCard["Q"] = "K";
         nextCard["K"] = "A";
 
+        List<string> used = new List<string>();
+
         int totalFound = 0;
         Dictionary<string, int> totalRanks = TotalRanks();
 
@@ -47,7 +49,9 @@ class VideoPoker : IGambleGame
 
         for(int i = 0; i < hand.Count; i++)
         {
+            if (used.Contains(hand[i].Rank)) return false;
             if (totalRanks.ContainsKey(nextCard[hand[i].Rank])){
+                used.Add(hand[i].Rank);
                 totalFound++;
             }
         }
