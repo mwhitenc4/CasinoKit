@@ -55,7 +55,9 @@ class Gambling
             new MysteryBox(),
             new VideoPoker(),
             new Craps(),
+            new Baccarat(),
         };
+
         IGambleGame selectedGame = null;
 
         for (int i = 0; i < games.Count; i++)
@@ -70,11 +72,12 @@ class Gambling
 
         Console.WriteLine();
 
+        int selected = -1;
         while (selectedGame == null)
         {
             Console.Write("Enter Game ID: ");
 
-            if (int.TryParse(Console.ReadLine(), out int selected))
+            if (int.TryParse(Console.ReadLine(), out selected))
             {
                 if (selected >= 0 && selected < games.Count)
                 {
