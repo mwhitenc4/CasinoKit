@@ -15,15 +15,18 @@ class MysteryBox : IGambleGame
 
     int jackpot = -1;
     int rarity = 2500;
+    static int current = 0;
 
     int Generate()
     {
         Random rand = new Random();
         int random = rand.Next(1, rarity);
 
+        current++;
+
         if(random == 1)
         {
-            Gambling.SetClipboard("[Mystery Box] You won the Jackpot: " + Gambling.FormatMoney(jackpot));
+            Gambling.SetClipboard("[Mystery Box #" + current + " You won the Jackpot: " + Gambling.FormatMoney(jackpot));
             return jackpot;
         }
         else
@@ -34,36 +37,36 @@ class MysteryBox : IGambleGame
             if(random <= 2)
             {
                 value = (int)((double)jackpot * 0.35);
-                Gambling.SetClipboard("[Mystery Box] You win: " + Gambling.FormatMoney(value));
+                Gambling.SetClipboard("[Mystery Box #" + current + "] You win: " + Gambling.FormatMoney(value));
                 return value;
             }
             else if(random < (rarity / 75))
             {
                 value = (int)((double)jackpot * 0.075);
-                Gambling.SetClipboard("[Mystery Box] You win: " + Gambling.FormatMoney(value));
+                Gambling.SetClipboard("[Mystery Box #" + current + "] You win: " + Gambling.FormatMoney(value));
                 return value;
             }
             else if(random < (rarity / 40))
             {
                 value = (int)((double)jackpot * 0.05);
-                Gambling.SetClipboard("[Mystery Box] You win: " + Gambling.FormatMoney(value));
+                Gambling.SetClipboard("[Mystery Box #" + current + "] You win: " + Gambling.FormatMoney(value));
                 return value;
             }
             else if(random < (rarity / 15))
             {
                 value = (int)((double)jackpot * 0.01);
-                Gambling.SetClipboard("[Mystery Box] You win: " + Gambling.FormatMoney(value));
+                Gambling.SetClipboard("[Mystery Box #" + current + "] You win: " + Gambling.FormatMoney(value));
                 return value;
             }
             else if(random < (rarity / 10))
             {
                 value = (int)((double)jackpot * 0.0075);
-                Gambling.SetClipboard("[Mystery Box] You win: " + Gambling.FormatMoney(value));
+                Gambling.SetClipboard("[Mystery Box #" + current + "] You win: " + Gambling.FormatMoney(value));
                 return value;
             }
 
             value = (int)((float)jackpot * 0.005);
-            Gambling.SetClipboard("[Mystery Box] You win: " + Gambling.FormatMoney(value));
+            Gambling.SetClipboard("[Mystery Box #" + current + "] You win: " + Gambling.FormatMoney(value));
             return value;
         }
     }

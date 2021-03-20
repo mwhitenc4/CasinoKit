@@ -16,9 +16,12 @@ class ScratchCards : IGambleGame
     int jackpot = -1;
     Dictionary<int, int> possibilities = new Dictionary<int, int>();
 
+    static int currentID = 1;
+
     int Generate()
     {
-        string result = "[Scratch Card] | ";
+        string result = "[Scratch Card #" + currentID + "] | ";
+        currentID++;
 
         int[] payout = new int[3];
 
