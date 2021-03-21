@@ -51,12 +51,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Deck.cs" />
+    <Compile Include="Games\Baccarat.cs" />
     <Compile Include="Games\Blackjack.cs" />
+    <Compile Include="Games\Craps.cs" />
     <Compile Include="Games\Dice.cs" />
     <Compile Include="Games\DoubleOrNothing.cs" />
     <Compile Include="Games\MysteryBox.cs" />
     <Compile Include="Games\Roulette.cs" />
     <Compile Include="Games\ScratchCards.cs" />
+    <Compile Include="Games\SixShooter.cs" />
     <Compile Include="Games\VideoPoker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

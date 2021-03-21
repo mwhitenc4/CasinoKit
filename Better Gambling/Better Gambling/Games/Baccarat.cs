@@ -87,7 +87,7 @@ class Baccarat : IGambleGame
                     }
                     else if (playerTotal < bankerTotal)
                     {
-                        Gambling.SetClipboard("[Baccarat] (DEALER WIN) Banker's Natural " + bankerTotal + " beats Player's " + playerTotal);
+                        Gambling.SetClipboard("[Baccarat] (BANKER WIN) Banker's Natural " + bankerTotal + " beats Player's " + playerTotal);
                     }
                     else
                     {
